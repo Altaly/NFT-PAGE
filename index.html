@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById("stopButton").addEventListener("click", function () {
+            var mainContent = document.getElementById("mainContent");
+            var bgVideo = document.getElementById("bgVideo");
+    
+            if (mainContent.classList.contains("d-none")) {
+                mainContent.classList.remove("d-none");
+                bgVideo.pause();
+            } else {
+                mainContent.classList.add("d-none");
+                bgVideo.play();
+            }
+        });
+    </script>    
+    <style>
+        /* Estilos personalizados */
+        :root {
+            --color-primario: #000000; /* Negro */
+            --color-secundario: #FFD700; /* Amarillo */
+            --color-terciario: #0000FF; /* Azul */
+        }
+
+        .bg-dark {
+            background-color: var(--color-primario) !important;
+        }
+
+        .video-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        overflow: hidden;
+        }
+    
+        #bgVideo {
+        min-width: 100%;
+        min-height: 100%;
+        }
+
+        #stopButton {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 2;
+        }
+
+        .btn-primary {
+            background-color: var(--color-secundario);
+            border-color: var(--color-secundario);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--color-terciario);
+            border-color: var(--color-terciario);
+        }
+
+        .dropdown-menu {
+        background-color: var(--color-primario);
+    }
+
+    .dropdown-item {
+        color: #FFFFFF;
+    }
+
+    .dropdown-item:hover {
+        color: var(--color-primario);
+        background-color: var(--color-secundario);
+    }
+    </style>
+    <title>Cryptojingle - Colección NFT en Solana</title>
+</head>
+
+<button id="stopButton" class="btn btn-danger">STOP</button>
+<div id="mainContent" class="d-none">
+    <!-- Aquí va el contenido de la página que estará oculto al inicio -->
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container d-flex justify-content-between">
+                <a class="navbar-brand" href="#">Cryptojingle</a>
+                <div class="d-flex">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Minting</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">SoundMap</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Galery</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                More
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">FAQS</a></li>
+                                <li><a class="dropdown-item" href="#">TEAM</a></li>
+                                <li><a class="dropdown-item" href="#">MANIFESTO</a></li>
+                                <li><a class="dropdown-item" href="#">IP LICENSE</a></li>
+                                <li><a class="dropdown-item" href="#">COPYRIGHT</a></li>
+                            </ul>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+</div>
+
+    <main>
+        <section class="container-fluid" style="background-image: url('fondo.jpg'); background-size: cover; background-position: center; height: 100vh;">
+            <div class="container h-100 d-flex align-items-center justify-content-center flex-column">
+                <h1 class="text-white">Bienvenido a Cryptojingle</h1>
+                <p class="lead text-white">La colección NFT de jingles inspirados en Shiba Inu en la blockchain de Solana.</p>
+                <div>
+                    <button type="button" class="btn btn-primary me-2" id="create-account">Crear cuenta</button>
+                    <button type="button" class="btn btn-primary" id="login">Ingresar</button>
+            </div>
+            <div class="video-container">
+                <video id="bgVideo" autoplay muted loop>
+                    <source src="C:\Users\Alex\Documents\CryptoJinglers\promos\pruebas\promo prueba.mp4" type="video/mp4">
+                </video>
+            </div>            
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p class="text-center my-3">Cryptojingle &copy; 2023. Todos los derechos reservados.</p>
+        </div>
+    </footer> 
+</body>
+
+</html>
